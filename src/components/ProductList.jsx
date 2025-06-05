@@ -7,13 +7,13 @@ const sampleProducts = [
   { id: 2, name: 'Milk', price: '$2.50', inStock: false },
 ]
 
-const ProductList = () => {
+const ProductList = ({products}) => {
   return (
     <div>
       <h2>Available Products</h2>
 
       {/* TODO: Replace sample data with dynamic product list */}
-      {sampleProducts.map((product) => (
+      {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
     </div>

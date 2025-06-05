@@ -19,6 +19,18 @@ const App = () => {
     { id: 7, name: 'Strawberry', price: '$2.00', inStock: false, category: 'fruits' },
   ]
 
+  const [filter, setFilter] = useState('all')
+
+  const filteredProducts = products.filter(product => {
+    if(filter === 'fruits') {
+      return product.category === 'fruits'
+    } else if (filter === 'dairy') {
+      return product.category === 'dairy'
+    } else {
+      return true 
+    }
+  })
+
   return (
     <div>
       <h1>🛒 Shopping App</h1>
@@ -31,14 +43,14 @@ const App = () => {
 
       {/* TODO: Implement category filter dropdown */}
       <label>Filter by Category: </label>
-      <select>
+      <select value={filter} onChange={e => setFilter(e.target.value)}>
         <option value="all">All</option>
-        <option value="Fruits">Fruits</option>
-        <option value="Dairy">Dairy</option>
+        <option value="fruits">Fruits</option>
+        <option value="dairy">Dairy</option>
       </select>
 
-      {/* Display initial sample products */}
-      <ProductList />
+      
+      <ProductList products={filteredProducts}/>
 
       {/* TODO: Implement and render Cart component */}
     </div>
