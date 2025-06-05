@@ -5,7 +5,7 @@ import Cart from './components/Cart'
 
 const App = () => {
   // TODO: Implement state for dark mode toggle
-
+  const [mode, setMode] = useState('dark')
   // TODO: Implement state for cart management
 
   // TODO: Implement state for category filtering
@@ -31,15 +31,20 @@ const App = () => {
     }
   })
 
+  let content;
+  if (filteredProducts.length === 0) {
+    content = <p>No products available.</p>;
+  } else {
+    content = <ProductList products={filteredProducts} />;
+  }
+
+
   return (
     <div>
       <h1>🛒 Shopping App</h1>
-      <p>
-        Welcome! Your task is to implement filtering, cart management, and dark
-        mode.
-      </p>
 
       {/* TODO: Render DarkModeToggle and implement dark mode functionality */}
+      <DarkModeToggle mode={mode} updateMode={setMode}/>
 
       {/* TODO: Implement category filter dropdown */}
       <label>Filter by Category: </label>
@@ -50,7 +55,7 @@ const App = () => {
       </select>
 
       
-      <ProductList products={filteredProducts}/>
+      {content}
 
       {/* TODO: Implement and render Cart component */}
     </div>
