@@ -12,6 +12,12 @@ const App = () => {
   function addItemsToCart(item) {
     updateCart((prevCart)=>[...prevCart,item])
   }
+
+  function removeItemsFromCart(itemToRemove) {
+    updateCart((prevCart)=> {
+      return prevCart.filter((item,index)=> index !== itemToRemove)
+    })
+  }
   // TODO: Implement state for category filtering
   const products = [
     { id: 1, name: 'Apple', price: '$1.00', inStock: true, category: 'fruits' },
@@ -63,7 +69,7 @@ const App = () => {
 
       {/* TODO: Implement and render Cart component */}
 
-      <Cart cartItems={cartItems}/>
+      <Cart cartItems={cartItems} removeItemsFromCart={removeItemsFromCart}/>
 
     </div>
   )
