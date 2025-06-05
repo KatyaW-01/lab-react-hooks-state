@@ -10,7 +10,6 @@ const ProductCard = ({ product, addItemsToCart }) => {
       <p>Price: {product.price}</p>
       <p>Status: {product.inStock ? 'In Stock' : 'Out of Stock'}</p>
 
-      {/* TODO: Implement Add to Cart button functionality */}
       <button onClick={()=> addItemsToCart(product)} disabled={!product.inStock}>Add to Cart</button>
     </div>
   )
