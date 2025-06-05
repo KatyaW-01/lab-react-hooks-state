@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '@mui/material/Button';
 
 const Cart = ({cartItems, removeItemsFromCart}) => {
   return (
@@ -8,7 +9,7 @@ const Cart = ({cartItems, removeItemsFromCart}) => {
         {cartItems.map((item,index)=> (
           <li key={index}>
             {item.name} - {item.price}
-            <button onClick={()=>removeItemsFromCart(index)}>Remove</button>
+            <Button variant="outlined" color= "secondary" onClick={()=>removeItemsFromCart(index)} sx={{m:2}}>Remove</Button>
           </li>
         ))}
       </ul>

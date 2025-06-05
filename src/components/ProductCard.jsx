@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../styles/ProductCard.module.css'
+import Button from '@mui/material/Button';
 
 const ProductCard = ({ product, addItemsToCart }) => {
   let card;
@@ -31,7 +32,7 @@ const ProductCard = ({ product, addItemsToCart }) => {
       <p className = {info}>Price: {product.price}</p>
       <p className={status}> Status: {product.inStock ? 'In Stock' : 'Out of Stock'}</p>
 
-      <button onClick={()=> addItemsToCart(product)} disabled={!product.inStock}>Add to Cart</button>
+      <Button variant="outlined" onClick={()=> addItemsToCart(product)} disabled={!product.inStock}>Add to Cart</Button>
     </div>
   )
 }
