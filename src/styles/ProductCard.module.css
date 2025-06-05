@@ -3,3 +3,10 @@
 /* TODO: Add special styling for out-of-stock products */
 
 /* TODO: Style the add/remove button */
+.outOfStock .outOfStockStatus{
+  color: red
+}
+
+.outOfStockInfo {
+  color: grey
+}
