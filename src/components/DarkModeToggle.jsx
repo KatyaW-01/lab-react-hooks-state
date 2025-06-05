@@ -1,11 +1,12 @@
 import React from 'react'
 import styles from '../styles/DarkMode.module.css'
+import Button from '@mui/material/Button';
 
 const DarkModeToggle = ({mode,updateMode}) => {
   // TODO: Implement dark mode toggle logic
 
   return (
-    <button onClick={()=>{updateMode(mode)}} >Toggle Dark Mode {/* TODO: Update this text dynamically */}</button>
+    <Button variant="contained"onClick={()=>{updateMode(mode)}} sx={{m:2}} >Toggle Dark Mode {/* TODO: Update this text dynamically */}</Button>
   )
 }
 
