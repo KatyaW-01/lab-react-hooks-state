@@ -1,12 +1,16 @@
 import React from 'react'
 
-const Cart = () => {
+const Cart = ({cartItems}) => {
   return (
     <div>
       <h2>Shopping Cart</h2>
-
-      {/* TODO: Display cart items dynamically */}
-      <p>The cart feature will be implemented here.</p>
+      <ul>
+        {cartItems.map((item)=> (
+          <li>
+            {item.name} - {item.price}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

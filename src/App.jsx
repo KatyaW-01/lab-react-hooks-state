@@ -7,7 +7,11 @@ const App = () => {
   // TODO: Implement state for dark mode toggle
   const [mode, setMode] = useState('dark')
   // TODO: Implement state for cart management
+  const [cartItems, updateCart] = useState([])
 
+  function addItemsToCart(item) {
+    updateCart((prevCart)=>[...prevCart,item])
+  }
   // TODO: Implement state for category filtering
   const products = [
     { id: 1, name: 'Apple', price: '$1.00', inStock: true, category: 'fruits' },
@@ -35,7 +39,7 @@ const App = () => {
   if (filteredProducts.length === 0) {
     content = <p>No products available.</p>;
   } else {
-    content = <ProductList products={filteredProducts} />;
+    content = <ProductList products={filteredProducts} addItemsToCart={addItemsToCart} />;
   }
 
 
@@ -58,6 +62,9 @@ const App = () => {
       {content}
 
       {/* TODO: Implement and render Cart component */}
+
+      <Cart cartItems={cartItems}/>
+
     </div>
   )
 }
