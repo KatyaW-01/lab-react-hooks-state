@@ -9,6 +9,15 @@ const App = () => {
   // TODO: Implement state for cart management
 
   // TODO: Implement state for category filtering
+  const products = [
+    { id: 1, name: 'Apple', price: '$1.00', inStock: true, category: 'fruits' },
+    { id: 2, name: 'Milk', price: '$2.50', inStock: false, category: 'dairy' },
+    { id: 3, name: 'Banana', price: 0.5, inStock: false, category: 'fruits' },
+    { id: 4, name: 'Cheddar Cheese', price: '$4.00', inStock: true, category: 'dairy' },
+    { id: 5, name: 'Orange', price: '$1.20', inStock: true, category: 'fruits' },
+    { id: 6, name: 'Yogurt', price: '$3.00', inStock: true, category: 'dairy' },
+    { id: 7, name: 'Strawberry', price: '$2.00', inStock: false, category: 'fruits' },
+  ]
 
   return (
     <div>
