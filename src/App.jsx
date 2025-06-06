@@ -9,14 +9,14 @@ const App = () => {
   // TODO: Implement state for dark mode toggle
   const [darkMode, setDarkMode] = useState(false)
  
-  const [cartItems, updateCart] = useState([])
+  const [cartItems, setCartItems] = useState([])
 
   function addItemsToCart(item) {
-    updateCart((prevCart)=>[...prevCart,item])
+    setCartItems((prevCart)=>[...prevCart,item])
   }
 
   function removeItemsFromCart(itemToRemove) {
-    updateCart((prevCart)=> {
+    setCartItems((prevCart)=> {
       return prevCart.filter((item,index)=> index !== itemToRemove)
     })
   }
