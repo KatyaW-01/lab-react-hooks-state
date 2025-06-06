@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import ProductList from './components/ProductList'
 import DarkModeToggle from './components/DarkModeToggle'
+import styles from './styles/DarkMode.module.css'
 import Cart from './components/Cart'
 
 
 const App = () => {
   // TODO: Implement state for dark mode toggle
-  const [mode, setMode] = useState('dark')
+  const [darkMode, setDarkMode] = useState(false)
  
   const [cartItems, updateCart] = useState([])
 
@@ -51,11 +52,11 @@ const App = () => {
 
 
   return (
-    <div>
+    <div className= {darkMode ? styles.dark : styles.light}>
       <h1>🛒 Shopping App</h1>
 
       {/* TODO: Render DarkModeToggle and implement dark mode functionality */}
-      <DarkModeToggle mode={mode} updateMode={setMode}/>
+      <DarkModeToggle mode={darkMode} setDarkMode={setDarkMode}/>
 
       <label>Filter by Category: </label>
       <select value={filter} onChange={e => setFilter(e.target.value)}>
